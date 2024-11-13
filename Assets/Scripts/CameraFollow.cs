@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
     public float speedmove = 0.9f; //Creating the movement speed of the camera
     public Vector3 offset; // Ensuring the camera can be offset from the character
 
+
     // --> We will alos need the background boundaries to limite the camera
     public Transform Projection_background;
     Vector3 minBound; // --> Using Vector 3 as we have X, Y, Z axis
@@ -23,6 +24,8 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Below we will establish the zoom in and out size of the camera to capture more of the background
+
         // Here we will be setting up the camera, to ensure its operational
 
         Camera cam = Camera.main;
@@ -45,7 +48,7 @@ public class CameraFollow : MonoBehaviour
 
                 // --> Setting the min and max bounds of the camera via the background position
                 minBound = bckgrndPosition - (bckgrndSize / 2) + new Vector3(camWidth, camHeight, 0);
-                maxBound = bckgrndPosition + (bckgrndSize / 2 - new Vector3(camWidth, camHeight, 0));
+                maxBound = bckgrndPosition + (bckgrndSize / 2) - new Vector3(camWidth, camHeight, 0);
             }
         }
         
