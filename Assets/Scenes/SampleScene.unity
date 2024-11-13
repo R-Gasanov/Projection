@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -430,7 +431,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -462,6 +463,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ac39165c986437396fc95b68cffd65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 1424239316}
+  speedmove: 0.125
+  offset: {x: 0, y: 0, z: -20}
+  Projection_background: {fileID: 1343313935}
 --- !u!1 &980331775
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +561,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1343313935 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2684875152657285083, guid: 4abce64f474c145dc8acbc8c0284b5ba, type: 3}
+  m_PrefabInstance: {fileID: 1455737658496624453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1424239313
 GameObject:
   m_ObjectHideFlags: 0
