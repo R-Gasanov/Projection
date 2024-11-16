@@ -436,7 +436,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundCheck: {fileID: 999111392}
-  jumpHeight: 100
+  jumpHeight: 200
 --- !u!1001 &565418569
 PrefabInstance:
   m_ObjectHideFlags: 0
