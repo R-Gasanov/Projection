@@ -9,7 +9,7 @@ public class cubeController : MonoBehaviour
 
     // Here will be the variables used to enact jumping
     bool onground = false; // --> Used to check if the cube is on the ground
-    float groundCheckArea = 0.2f; // --> Used as the area radius (child object) to check if the object is on the ground
+    public Vector2 groundCheckArea = new Vector2(1f, 0.4f); // --> Used as the area radius (child object) to check if the object is on the ground
 
 
     // Building the circle that will check if the cube is on the ground or not
@@ -54,7 +54,7 @@ public class cubeController : MonoBehaviour
     void FixedUpdate()
     {
         // Checking if we are grounded or not then we are falling
-        onground = Physics2D.OverlapCircle(groundCheck.position, groundCheckArea, groundLayer);
+        onground = Physics2D.OverlapBox(groundCheck.position, groundCheckArea, 0f, groundLayer);
 
         movement.SetBool("Onground", onground);
 
