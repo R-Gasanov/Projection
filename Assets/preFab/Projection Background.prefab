@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 749152278209373879}
   - component: {fileID: 7290379697847343893}
   - component: {fileID: 2385465594390976347}
+  - component: {fileID: 2785284543862038481}
   m_Layer: 0
   m_Name: Projection Background
   m_TagString: Untagged
@@ -55,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b76d1ee2583a9455990f35f779567c24, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -222,3 +223,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 18}
   m_EdgeRadius: 0
+--- !u!114 &2785284543862038481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250265073672945062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a879132f71834909ab966103dde54ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Idle_Projector_01: {fileID: 0}
+  On_Projector_01: {fileID: 0}
