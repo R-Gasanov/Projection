@@ -8,18 +8,29 @@ public class SceneLoaderProjector : MonoBehaviour
 
     private bool playerTrigger = false;
 
+    // --> Below we are saving the position of player
+
+    public void PositionSave(Vector2 position) // Taking in Vectors only
+    {
+        PlayerPrefs.SetFloat("CharacterX", position.x);
+        //PlayerPrefs.SetFloat("CharacterY", position.y); The y axis is always constant
+        PlayerPrefs.Save();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (playerTrigger && Input.GetKeyDown(KeyCode.E))
         {
+            
             ArcadeScene();
         }
     }
 
     // The function where we will load the next scene
     void ArcadeScene()
-    {
+    { // --> Just before we head to the new scene, we will save the position of the player
+        PositionSave(transform.position);
         SceneManager.LoadScene("Level One");
     }
 

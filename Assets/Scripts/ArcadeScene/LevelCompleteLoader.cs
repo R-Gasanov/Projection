@@ -11,14 +11,33 @@ public class LevelCompleteLoader : MonoBehaviour
 
     public static bool CompleteLevel = false; // --> The checker if that level is completed
 
+    // --> Below we are assigning the image that will represent that you've completed the level
+    public GameObject CompleteScreen;
+    public float displayDuration = 3f; // --> The duration that image will stay up till we change scenes
+
+
 
     // Update is called once per frame
     void Update()
     {
         if (PlayerLvlComplete == true)
         {
-            CompletedLvl();
+            StartCoroutine(ShowCompleteScreen());
         }
+    }
+    // --> Us showing the image through this function
+
+    private IEnumerator ShowCompleteScreen()
+    {
+        PlayerLvlComplete = false; // --> Prevent multiple triggers
+        if (CompleteScreen != null)
+        {
+            CompleteScreen.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(displayDuration); // --> Showing the image based on the time provided
+
+        CompletedLvl();
     }
 
     void CompletedLvl()
