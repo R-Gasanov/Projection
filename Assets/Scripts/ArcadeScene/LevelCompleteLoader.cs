@@ -15,7 +15,9 @@ public class LevelCompleteLoader : MonoBehaviour
     public GameObject CompleteScreen;
     public float displayDuration = 3f; // --> The duration that image will stay up till we change scenes
 
+    
 
+    public SceneLoaderProjector SceneLoaderProj;
 
     // Update is called once per frame
     void Update()
@@ -43,6 +45,9 @@ public class LevelCompleteLoader : MonoBehaviour
     void CompletedLvl()
     { // --> Will active once the level is compelted
 
+
+        //--> Here we will add on an additional value to help get to the next level
+        SceneLoaderProjector.CurrentLevel.LvlCount = SceneLoaderProjector.CurrentLevel.LvlCount + 1;
         CompleteLevel = true; // Updating the condition for the start
         SceneManager.LoadScene("SampleScene");
     }
