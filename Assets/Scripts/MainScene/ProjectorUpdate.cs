@@ -17,6 +17,10 @@ public class ProjectorUpdate : MonoBehaviour
     public GameObject Idle_Projector_05;
     public GameObject On_Projector_05;
 
+    // When the person finally turns on all the projectors within the game
+    public GameObject VictoryScreen;
+
+
     // Start is called before the first frame update
     private void Start()
     { // Checking if the CompleteLevel is true and we do indeed have those GameObjects
@@ -42,16 +46,29 @@ public class ProjectorUpdate : MonoBehaviour
             Idle_Projector_03.SetActive(false);
             On_Projector_03.SetActive(true);
 
-            HerSpawn.SpawnChance = 0.25f;
+            // Just making the game harder to ensure the player has to deal with the boss
+            /*
+            HerSpawn.SpawnChance = 0.2f;
             HerMovement.speed = 12f;
+            */
+
+
+            HerSpawn.SpawnChance = 0.3f;
+            HerMovement.speed = 16f;
         }
         else if (LevelCompleteLoader.CompleteLevel && Idle_Projector_04 != null && On_Projector_04 != null && SceneLoaderProjector.CurrentLevel.LvlCount == 5)
         {
             Idle_Projector_04.SetActive(false);
             On_Projector_04.SetActive(true);
 
+            /*
             HerSpawn.SpawnChance = 0.3f;
             HerMovement.speed = 16f;
+            */
+
+            HerSpawn.SpawnChance = 0.5f;
+            HerMovement.speed = 24f;
+
         }
         else if (LevelCompleteLoader.CompleteLevel && Idle_Projector_05 != null && On_Projector_05 != null && SceneLoaderProjector.CurrentLevel.LvlCount == 6)
         {
@@ -60,7 +77,16 @@ public class ProjectorUpdate : MonoBehaviour
 
             HerSpawn.SpawnChance = 0.35f;
             HerMovement.speed = 20f;
+
+            Victory();
         }
+
+        void Victory()
+        {
+            Time.timeScale = 0f;
+            VictoryScreen.SetActive(true);
+        }
+
         //else if (LevelCompleteLoader.CompleteLevel && Idle_)
     }
 }
