@@ -6,7 +6,7 @@ public class playerPosition : MonoBehaviour
 { // --> I found an error where when you start a new session it'll load prior sessions values
 
 
-    private float currentY = 0f; // --> That is the relative height the character needs to be (ground)
+    //private float currentY = 0f; // --> That is the relative height the character needs to be (ground)
     
     // Start is called before the first frame update
     void Start()

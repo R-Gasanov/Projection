@@ -9,13 +9,14 @@ public class HerSpawn : MonoBehaviour
 
     // The Spawn distance and chance
 
-    public float SpawnDist = 5f;
+    //public float SpawnDist = 7f;
     public static float SpawnChance = 0f;
-
 
     // Start is called before the first frame update
     void Start()
     {
+        
+
         // We will want it to have a chance at spawning every incrimental second
         InvokeRepeating("AttemptSpawn", 1f, 1f);
     }
@@ -36,8 +37,21 @@ public class HerSpawn : MonoBehaviour
 
     void SpawnHer()
     {
-        Vector2 SpawnLoc = (Vector2)Character.position - new Vector2(SpawnDist, 0);
+        // NEW additional code for the game itself
+        int counter = Random.Range(0, 2); // Generate a value between 0 or 1 (0 is inclusive in the MIN range 2 is exlusive in the MAX range)
 
-        Instantiate(Her, SpawnLoc, Quaternion.identity);
+        if (counter == 0)
+        {
+            Vector2 SpawnLoc = (Vector2)Character.position - new Vector2(7, 0);
+
+            Instantiate(Her, SpawnLoc, Quaternion.identity);
+        }
+        else if (counter == 1) // To spawn on the opposite end of the charcter to make it more interersting 
+        {
+            Vector2 SpawnLoc = (Vector2)Character.position - new Vector2(-7, 0);
+
+            Instantiate(Her, SpawnLoc, Quaternion.identity);
+        }
+        
     }
 }
