@@ -29,7 +29,7 @@ public class ProjectorUpdate : MonoBehaviour
         { // Above we're having to go through the other script LevelCompleteLoader to find if it has completed the level or not
             Idle_Projector_01.SetActive(false); // --> Turning off one object
             On_Projector_01.SetActive(true); // --> Whilst turning on the other one making visible
-            HerSpawn.SpawnChance = 0.2f;
+            HerSpawn.SpawnChance = 0.3f;
             HerMovement.speed = 16f;
         }
         if (LevelCompleteLoader.CompleteLevel && Idle_Projector_02 != null && On_Projector_01 != null && SceneLoaderProjector.CurrentLevel.LvlCount >= 3)
@@ -38,8 +38,8 @@ public class ProjectorUpdate : MonoBehaviour
             On_Projector_02.SetActive(true);
 
             // We are slowly scaling her difficulty to make the game more harder
-            HerSpawn.SpawnChance = 0.3f;
-            HerMovement.speed = 20f;
+            HerSpawn.SpawnChance = 0.4f;
+            HerMovement.speed = 18f;
 
         }
         if (LevelCompleteLoader.CompleteLevel && Idle_Projector_03 != null && On_Projector_03 != null && SceneLoaderProjector.CurrentLevel.LvlCount >= 4)
@@ -54,8 +54,8 @@ public class ProjectorUpdate : MonoBehaviour
             */
 
 
-            HerSpawn.SpawnChance = 0.4f;
-            HerMovement.speed = 24f;
+            HerSpawn.SpawnChance = 0.5f;
+            HerMovement.speed = 20f;
         }
         if (LevelCompleteLoader.CompleteLevel && Idle_Projector_04 != null && On_Projector_04 != null && SceneLoaderProjector.CurrentLevel.LvlCount >= 5)
         {
@@ -67,17 +67,14 @@ public class ProjectorUpdate : MonoBehaviour
             HerMovement.speed = 16f;
             */
 
-            HerSpawn.SpawnChance = 0.5f;
-            HerMovement.speed = 30f;
+            HerSpawn.SpawnChance = 0.6f;
+            HerMovement.speed = 24f;
 
         }
         if (LevelCompleteLoader.CompleteLevel && Idle_Projector_05 != null && On_Projector_05 != null && SceneLoaderProjector.CurrentLevel.LvlCount >= 6)
         {
             Idle_Projector_05.SetActive(false);
             On_Projector_05.SetActive(true);
-
-            HerSpawn.SpawnChance = 0.6f;
-            HerMovement.speed = 36f;
 
             Victory();
         }
